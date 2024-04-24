@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    
+</head>
+<style>
+   
+  
+   
+    button{
+        border: 2px solid rgb(69, 245, 30);
+        width:100px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20%;
+        /* padding: 3px; */
+        position: relative;
+        margin: 100px;
+        left: 0px;
+        
+    }
+    .state{
+        border-radius:0%;
+        height: 50px;
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+        margin-left: 180px;
+      
+        
+
+
+    
+       
+        
+    }
+
+    
+
+
+
+
+html,
+body {
+    /* margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+    
+    
+   
+    background-color: #21D4FD;
+background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color:white
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:rgb(0, 0, 97);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+#oval{
+  font-size: larger;
+  font-weight: 500;
+    border-radius: 30%;
+    left: 150px;
+    top: 0px;
+    height: 100px;
+    margin:0px
+    
+    
+    
+}
+
+#sec{
+  font-size: larger;
+  font-weight: 500;
+  left: 400px;
+    top: 0px;
+    height: 100px;
+    margin:0px
+    
+}
+#sen1,#sen2,#sen3,#sen4{
+  font-size: larger;
+}
+#sen1:hover,#sen2:hover,#sen3:hover,#sen4:hover{
+  font-size: xx-large;
+  color: #FFF;
+}
+
+
+.side{
+  background-color:rgb(40, 245, 53);
+  height: 120px;
+  width: 150px;
+}
+@media only screen and (max-width: 600px) {
+    .side {
+      height: 100px;
+      width: 90px;
+      display: flex;
+    margin: 200px;
+      
+    }
+    
+    #sen1,#sen2,#sen3,#sen4{
+        font-size: smaller;
+      }
+      #sen1:hover,#sen2:hover,#sen3:hover,#sen4:hover{
+        font-size: large;
+        color: #FFF;
+      }
+      #oval{
+        font-size: smaller;
+        font-weight: 500;
+          border-radius: 30%;
+          left: 10px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+          
+          
+      }
+      #sec{
+        font-size: smaller;
+        font-weight: 500;
+        left: 90px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+      }
+      @media only screen and (max-width: 600px) {
+    .side {
+      height: 100px;
+      width: 90px;
+      display: flex;
+      justify-content: space-evenly;
+      
+    }
+    
+    #sen1,#sen2,#sen3,#sen4{
+        font-size: smaller;
+      }
+      #sen1:hover,#sen2:hover,#sen3:hover,#sen4:hover{
+        font-size: large;
+        color: #FFF;
+      }
+      #oval{
+        font-size: smaller;
+        font-weight: 500;
+          border-radius: 30%;
+          left: 10px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+          
+          
+      }
+      #sec{
+        font-size: smaller;
+        font-weight: 500;
+        left: 90px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+      }
+
+      @media only screen and (max-width: 600px) {
+    .side {
+      height: 100px;
+      width: 90px;
+      display: flex;
+      justify-content: space-evenly;
+      
+    }
+    #sen1,#sen2{
+        margin: 70px;
+        
+    }
+    #sen3,#sen4{
+        left: 200px;
+    }
+    
+    #sen1,#sen2,#sen3,#sen4{
+        font-size: smaller;
+      }
+      #sen1:hover,#sen2:hover,#sen3:hover,#sen4:hover{
+        font-size: large;
+        color: #FFF;
+      }
+      #oval{
+        font-size: smaller;
+        font-weight: 500;
+          border-radius: 30%;
+          left: 10px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+          
+          
+      }
+      #sec{
+        font-size: smaller;
+        font-weight: 500;
+        left: 90px;
+          top: 0px;
+          height: 70px;
+          width: 115px;
+          margin:0px
+          
+      }
+      button{
+        border: 2px solid rgb(69, 245, 30);
+        width:100px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20%;
+        /* padding: 3px; */
+        position: relative;
+        margin: 12px;
+        left: 0px;
+        
+    }
+    #sen3{
+    float:right;
+    bottom: 450px;
+    margin: 0px;
+    padding: 0px;
+
+
+    
+    
+}
+#sen4{
+    float:right;
+    bottom: 0px;
+    
+    left: 140px;
+    margin: 0px;
+    padding: 0px;
+
+    
+    
+}
+
+   
+    
+    
+    
+}
+
+   
+    
+
+
+
+      
+      
+  }
+      
+      
+  }
+      
+      
+  
+  @media only screen and (min-width: 600px) and (max-width:1000px) {
+    .side {
+      height: 120px;
+      width: 100px;
+      display: flex;
+      justify-content: space-evenly;
+      
+    }
+    
+    #sen1,#sen2,#sen3,#sen4{
+        font-size:large;
+      }
+      #sen1,#sen2{
+        margin: 90px;
+        
+    }
+      #sen1:hover,#sen2:hover,#sen3:hover,#sen4:hover{
+        font-size: larger;
+        color: #FFF;
+      }
+      #oval{
+        font-size: large;
+        font-weight: 500;
+          border-radius: 30%;
+          left: 50px;
+          top: 0px;
+          height: 80px;
+          width: 130px;
+          margin:0px
+          
+          
+          
+      }
+      #sec{
+        font-size:large;
+        font-weight: 500;
+        left: 200px;
+          top: 0px;
+          height: 80px;
+          width: 120px;
+          margin:0px
+          
+      }
+      button{
+        border: 2px solid rgb(69, 245, 30);
+        width:100px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20%;
+        /* padding: 3px; */
+        position: relative;
+        margin: 15px;
+        left: 0px;
+        
+    }
+    
+    
+    
+    
+        
+    
+    
+      
+      
+  }
+.red{
+    background-color: red;
+}
+/* #sen1,#sen2,#sen3,#sen4{
+    background-color:rgb(40, 245, 53);
+    font-weight: bolder;
+    position: relative;
+    left: 0px;
+} */
+
+
+.top{
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    left: 200px;
+    top: 10px;
+    
+}
+.sensor{
+    
+    /* display: flex; */
+    /* flex-direction:column;
+    justify-content: space-around;
+    position: relative; */
+    /* margin-right: 50px; */
+    margin-right: 120px;
+    font-size: larger;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.arrow {
+  position: absolute;
+  bottom: 65%;
+  left: 33%;
+  margin-left:-10px;
+}
+.arrow:before,
+.arrow:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -24px;
+  width: 30px;
+  height: 7px;
+  border-radius: 10px;
+  display: block;
+  background: #fff;
+  transform:rotate(45deg);
+  -webkit-transform:rotate(45deg); 
+}
+.arrow:after{
+  right: inherit;
+  left: -24px;
+  transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg); 
+}
+/* #up:hover{
+
+} */
+.animated{
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s both infinite;
+}
+ 
+ 
+ 
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+ 
+@-moz-keyframes bounce {
+  0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+ 
+@-o-keyframes bounce {
+  0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+@keyframes bounce {
+  0% {-webkit-transform: translateY(0); opacity: 0;}
+  60% { opacity: 1;}
+  100% {-webkit-transform: translateY(-60px); opacity: 0}
+}
+.ca3-scroll-down-arrow {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2hldnJvbl90aGluX2Rvd24iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiBmaWxsPSJ3aGl0ZSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTE3LjQxOCw2LjEwOWMwLjI3Mi0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OSwwYzAuMjcsMC4yNjgsMC4yNzEsMC43MDEsMCwwLjk2OWwtNy45MDgsNy44M2MtMC4yNywwLjI2OC0wLjcwNywwLjI2OC0wLjk3OSwwbC03LjkwOC03LjgzYy0wLjI3LTAuMjY4LTAuMjctMC43MDEsMC0wLjk2OWMwLjI3MS0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OSwwTDEwLDEzLjI1TDE3LjQxOCw2LjEwOXoiLz48L3N2Zz4=);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ca3-scroll-down-link {
+  cursor:pointer;
+  height: 50px;
+  width: 50px;
+  margin: 0px 0 0 -15px;
+  line-height: 100px;
+  position: absolute;
+  left:65%;
+  bottom: 500px;
+  color: #FFF;
+  text-align: center;
+  display: block;
+  font-size:xx-large;
+  z-index:auto;
+  border-radius: 10px;
+  text-decoration: none;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+
+  -webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
+  -moz-animation:    ca3_fade_move_down 2s ease-in-out infinite;
+  animation:         ca3_fade_move_down 2s ease-in-out infinite;
+}
+
+
+
+@-webkit-keyframes ca3_fade_move_down {
+  0%   { -webkit-transform:translate(0,-20px); opacity: 1;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,20px); opacity: 1; }
+}
+@-moz-keyframes ca3_fade_move_down {
+  0%   { -moz-transform:translate(0,-20px); opacity: 1;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,20px); opacity: 1; }
+}
+@keyframes ca3_fade_move_down {
+  0%   { transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,20px); opacity: 0; }
+}
+#sen3{
+    float:right;
+    bottom: 450px;
+    margin: 0px;
+    padding: 0px;
+
+
+    
+    
+}
+#sen4{
+    float:right;
+    bottom: 222px;
+    left: 150px;
+    margin: 0px;
+    padding: 0px;
+
+    
+    
+}
+
+
+
+
+
+
+
+
+    
+   
+    
+</style>
+<body>
+    
+        
+        
+               
+             <div class="top">
+
+                 <button class="glow-on-hover" type="button" id="oval">Auto</button>
+                 
+                    
+                  <button class="glow-on-hover" type="button"  id="sec"><a href="web.html">Manual</a></button></th>
+                  </div>
+                
+             
+            
+
+        <section class="sensor">
+            
+            <button   type="button" id="sen1"  class="side">Sensor1</button>
+            <button  type="button" id="sen2"  class="side">Sensor2</button>
+            <button  type="button" id="sen3" class="side">Sensor3</button>
+            <button  type="button" id="sen4" class="side">Sensor4</button>
+        </section>
+        <div class="arrow animated"></div>
+        <a class="ca3-scroll-down-link ca3-scroll-down-arrow" data-ca3_iconfont="ETmodules" data-ca3_icon=""></a>
+        
+        
+          
+        
+      
+        
+
+    
+    
+</body>
+</html>
