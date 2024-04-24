@@ -1,0 +1,217 @@
+#include <Stepper.h>
+int trigPin1 = 9;
+int echoPin1 = 10;
+int trigPin2 = 12;  
+int echoPin2 = 13;
+int trigPin3 = A0;
+int echoPin3 = A1;
+int trigPin4 = A2;
+int echoPin4 = A3;
+int counter = 0;
+int d1,t1;
+int d2,t2;
+int d3,t3,d4,t4;
+const int stepsPerRevolution = 200;
+const int motorPin1 = A4;
+const int motorPin2 = A5;
+const int motorPin3 = A6;
+const int motorPin4 = A7;
+Stepper myStepper(stepsPerRevolution, motorPin1, motorPin3, motorPin2, motorPin4);
+
+
+
+void setup() {
+  Serial.begin(9600);
+   myStepper.setSpeed(75);
+  pinMode(trigPin1, OUTPUT);
+  pinMode(echoPin1, INPUT);
+  pinMode(trigPin2, OUTPUT);
+  pinMode(echoPin2, INPUT);
+  pinMode(trigPin3,OUTPUT);
+  pinMode(echoPin3, INPUT);
+  pinMode(trigPin4, OUTPUT);
+  pinMode(echoPin4, INPUT);
+  pinMode(5,OUTPUT);
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(A4,OUTPUT);
+  pinMode(A5,OUTPUT);
+  
+  
+}
+
+void loop() 
+{
+
+if(d1<10)
+  { 
+   
+   myStepper.step(100);
+    d4=distanceD4();
+    while(d4>10)
+      {
+        d4=distanceD4();
+        digitalWrite(5,HIGH);
+        digitalWrite(7,LOW);
+        digitalWrite(A4,HIGH);  
+        delay(500);
+        
+      }
+      myStepper.step(-100);
+      digitalWrite(A4,LOW);
+      digitalWrite(5,LOW);
+      digitalWrite(7,HIGH);
+      counter++;
+      Serial.print("counter = ");
+      Serial.println(counter);
+ 
+    delay(100);
+    
+  }
+delay(1000);  
+d2=distanceD2();
+if(d2<10)
+  {  myStepper.step(150);
+
+    digitalWrite(5,HIGH);
+    digitalWrite(7,LOW);
+    digitalWrite(A4,HIGH);    
+    
+    d3=distanceD3();
+    while(d3>10)
+      {
+            
+        d3=distanceD3();
+        delay(500);
+      }
+      myStepper.step(-150);
+
+      digitalWrite(A4,LOW);
+      digitalWrite(5,LOW);
+      digitalWrite(7,HIGH);
+      counter++;
+      Serial.print("counter = ");
+      Serial.println(counter);
+  
+    delay(100);
+     
+  }
+delay(1000);
+d3=distanceD3();
+if(d3<10)
+  {  
+    myStepper.step(150);
+    digitalWrite(5,HIGH);
+    digitalWrite(7,LOW);
+    digitalWrite(A4,HIGH);    
+    
+    d2=distanceD2();
+    while(d2>10)
+      {
+          
+        d2=distanceD2();
+        delay(500);
+      }
+      myStepper.step(-150);
+
+      digitalWrite(A4,LOW);
+      digitalWrite(5,LOW);
+      digitalWrite(7,HIGH);
+      counter++;
+      Serial.print("counter = ");
+      Serial.println(counter);
+    
+    delay(100);
+    
+  }
+delay(1000);
+d4=distanceD4();
+if(d4<10)
+  { myStepper.step(150);
+
+    digitalWrite(5,HIGH);
+    digitalWrite(7,LOW);
+    digitalWrite(A4,HIGH);  
+    
+    d1=distanceD1();
+    while(d1>10)
+      {
+        
+        d1=distanceD1();
+        delay(500);
+      }
+      myStepper.step(-150);
+
+      digitalWrite(A4,LOW);
+      digitalWrite(5,LOW);
+      digitalWrite(7,HIGH);
+      counter++;
+      Serial.print("counter = ");
+      Serial.println(counter);
+    
+    delay(100);    
+  }
+delay(1000);
+
+}
+
+
+
+
+
+
+
+int distanceD1()
+{
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin1, LOW);
+  t1 = pulseIn(echoPin1, HIGH);
+  
+  d1 = (t1 * 0.017);
+
+  return d1;
+}
+int distanceD2()
+{
+  digitalWrite(trigPin2, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin2, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin2, LOW);
+  t2 = pulseIn(echoPin2, HIGH);
+  
+  d2 = (t2 * 0.017);
+
+  return d2;
+}
+
+int distanceD3()
+{
+  digitalWrite(trigPin3, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin3, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin3, LOW);
+  t3 = pulseIn(echoPin3, HIGH);
+  
+  d3 = (t3 * 0.017);
+
+  return d3;
+}
+
+int distanceD4()
+{
+  digitalWrite(trigPin4, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin4, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin4, LOW);
+  t4 = pulseIn(echoPin4, HIGH);
+  
+  d4 = (t4 * 0.017);
+
+  return d4;
+}
